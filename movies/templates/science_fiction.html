@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>Science-fiction</title>
+<h2>Science-Fiction Movies</h2>
+<div class="row">
+{% for fiction in science %}
+<div class="col" style="width:150px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <img src="{{ fiction.image_url }}" class="card-img-top" alt="image"  >
+                <div class=" row card-body">
+                <h5 class="text-truncate text-success">{{fiction.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{fiction.release_year}}  </p>
+                     <p class="col-sm text-danger" style="font-size:14px">₹{{fiction.movie_rate}}</p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

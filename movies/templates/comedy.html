@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>Comedy</title>
+<h2>Comedy</h2>
+<div class="row">
+{% for com in comedy %}
+<div class="col" style="width:150px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <img src="{{ com.image_url }}" class="card-img-top" alt="image"  >
+                <div class=" row card-body">
+                <p class="text-truncate text-success">{{com.title}}</p>
+                <p class="col-sm" style="font-size:15px; ">{{com.release_year}}  </p>
+                     <h6 class="col-sm text-danger" style="font-size:14px">₹{{com.movie_rate}}</h6>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

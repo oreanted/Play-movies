@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block content %}
+<title>Action</title>
+<h2>Action</h2>
+<div class="row">
+{% for ac in action %}
+<div class="col" style="width:150px">
+                <div class="card h-60" style="width: 10rem ;">
+                    <img src="{{ ac.image_url }}" class="card-img-top" alt="image"  >
+                <div class=" row card-body">
+                <h5 class="text-truncate text-success">{{ac.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{ac.release_year}}  </p>
+                     <p class="col-sm text-danger" style="font-size:14px">₹{{ac.movie_rate}}</p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

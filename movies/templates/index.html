@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+<br>
+<title>Play Movies</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+<div class="row ">
+    <div class="col-sm-11 text-bold mt-2 "><h4>Recommended for you</h4></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'index' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>></button></a>
+</div>
+</div>
+ <div class="row">
+     {% for movie in movies %}
+          {% if movie.id <= 7 %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+<div class="row  mt-2">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Romantic Movies</h4></div>
+    <div class="col-1 p-10 "><a href="{% url 'romance' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>></button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 6 and movie.id <= 140  %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:15px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+<div class="row  mt-2">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Comedy Time  Watch only ₹20</h4></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'comedy' %}"><button type="button" class="btn btn-danger btn-sm mt-10"> More>></button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 3 and movie.id <= 172  %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"> <img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star checked col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+
+<div class="row  mt-2 p-3">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Action On Play_Movie </h4></div>
+    <div class="col-sm-11 "><p>Action on fire</p></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'action' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>></button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 1 and movie.id <= 52  %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+<div class="row  mt-2 p-3">
+    <div class="col-sm-11 text-bold mt-2  "><h4> Watch Drama </h4></div>
+    <div class="col-sm-11 "><p>Hollywood Drama</p></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'drama' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>></button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 7 and movie.id <= 98  %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:15px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star checked col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+
+<div class="row  mt-2 p-3">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Adventure Movie </h4></div>
+    <div class="col-sm-11 "><p>Deals on movie purchases</p></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'adventure' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>></button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 2 and movie.id <= 14  %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star checked col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+<div class="row  mt-2 p-3">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Bollywood Movie </h4></div>
+    <div class="col-sm-11 "><p>Indian Cinema Watch anytime</p></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'indian' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>> </button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 9 and movie.id <= 137  %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+
+<div class="row  mt-2 p-3">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Top Sellers </h4></div>
+    <div class="col-sm-11 "><p>Most popular movies on Movie store </p></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'index' %}"><button type="button" class="btn btn-danger btn-sm mt-10">More>> </button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.release_year == 2021 and movie.id < 70 %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                    <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star checked col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+<div class="row  mt-2 p-3">
+    <div class="col-sm-11 text-bold mt-2  "><h4>Science-Fiction Movie </h4></div>
+    <div class="col-sm-11 "><p>Most popular si-fi  </p></div>
+    <div class="col-sm-1 p-10 "><a href="{% url 'fiction' %}"><button type="button" class="btn btn-danger btn-sm mt-10"> more>> </button></a>
+</div>
+</div>
+<div class="row">
+     {% for movie in movies %}
+          {% if movie.genre.id == 5 and movie.id < 90 %}
+            <div class="col" style="width:50px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
+                <div class=" row card-body">
+                <h5 class="text-truncate">{{movie.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{movie.release_year}}  </p>
+                    <p class="col-sm text-danger" style="font-size:14px; "> ₹ {{movie.movie_rate}}  </p>
+                    <div class="row">
+                    <span class="fa fa-star checked col-1" ></span>
+                    <span class="fa fa-star checked col-1"></span>
+                    <span class="fa fa-star checked col-3"></span>
+                    <span class="fa fa-star checked col-4"></span>
+                    </div>
+  </div>
+</div>
+</div>
+       {% endif %}
+     {% endfor %}
+ </div>
+
+{% endblock %}

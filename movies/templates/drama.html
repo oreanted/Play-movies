@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+<title>Drama</title>
+<h2>Drama</h2>
+<div class="row">
+{% for dr in drama %}
+<div class="col" style="width:150px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <img src="{{ dr.image_url }}" class="card-img-top" alt="image"  >
+                <div class=" row card-body">
+                <h5 class="text-truncate text-success">{{dr.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{dr.release_year}}  </p>
+                     <p class="col-sm text-danger" style="font-size:14px">₹{{dr.movie_rate}}</p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

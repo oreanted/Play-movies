@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>Romance</title>
+<h2>Romance</h2>
+<div class="row">
+{% for rom in romance %}
+<div class="col" style="width:150px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <img src="{{ rom.image_url }}" class="card-img-top" alt="image"  >
+                <div class=" row card-body">
+                <h5 class="text-truncate text-success">{{rom.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{rom.release_year}}  </p>
+                     <p class="col-sm text-danger" style="font-size:14px">₹{{rom.movie_rate}}</p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}

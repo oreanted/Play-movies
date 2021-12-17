@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<title>Indian_Cinema</title>
+<h2>Indian_Cinema</h2>
+<div class="row">
+{% for indian in cinema %}
+<div class="col" style="width:150px">
+                <div class="card h-50" style="width: 10rem ;">
+                    <img src="{{ indian.image_url }}" class="card-img-top" alt="image"  >
+                <div class=" row card-body">
+                <h5 class="text-truncate text-success">{{indian.title}}</h5>
+                <p class="col-sm" style="font-size:15px; ">{{indian.release_year}}  </p>
+                     <p class="col-sm text-danger" style="font-size:15px">₹{{indian.movie_rate}}</p>
+
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
