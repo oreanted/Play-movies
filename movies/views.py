@@ -34,7 +34,7 @@ def genre_comedy(request):
 
 
 def genre_romance(request):
-    romance = Movie.objects.filter(genre=6)
+    romance = Movie.objects.filter(genre=5)
     return render(request, 'romance.html', {'romance': romance})
 
 
