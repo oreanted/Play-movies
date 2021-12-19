@@ -43,7 +43,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 7 and movie.id <= 140  %}
+          {% if movie.genre.id == 5 and movie.id <= 140  %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -127,7 +127,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 7 and movie.id <= 98  %}
+          {% if movie.genre.id == 6 and movie.id <= 98  %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -184,7 +184,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 9 and movie.id <= 137  %}
+          {% if movie.genre.id == 8 and movie.id <= 137  %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -241,7 +241,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 5 and movie.id < 90 %}
+          {% if movie.genre.id == 4 and movie.id < 90 %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
