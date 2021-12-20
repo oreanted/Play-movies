@@ -44,7 +44,7 @@ def genre_indian_cinema(request):
 
 
 def genre_science(request):
-    science = Movie.objects.filter(genre=5)
+    science = Movie.objects.filter(genre=4)
     return render(request, 'science_fiction.html', {'science': science})
 
 
