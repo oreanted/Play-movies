@@ -99,7 +99,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 1 and movie.id <= 52  %}
+          {% if movie.genre.id == 1 and movie.id <= 49  %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -127,7 +127,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 6 and movie.id <= 98  %}
+          {% if movie.genre.id == 6 and movie.id <= 94  %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -156,7 +156,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 2 and movie.id <= 14  %}
+          {% if movie.genre.id == 2 and movie.id <= 11  %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -213,7 +213,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.release_year == 2021 and movie.id < 70 %}
+          {% if movie.release_year == 2021 and movie.id < 60 %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
@@ -241,7 +241,7 @@
 </div>
 <div class="row">
      {% for movie in movies %}
-          {% if movie.genre.id == 4 and movie.id < 90 %}
+          {% if movie.genre.id == 4 and movie.id <= 88 %}
             <div class="col" style="width:50px">
                 <div class="card h-50" style="width: 10rem ;">
                     <a href="{% url 'pay' %}"><img src="{{ movie.image_url }}" class="card-img-top" alt="image"  ></a>
