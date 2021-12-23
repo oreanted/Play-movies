@@ -14,7 +14,7 @@ def index(request,):
 
 
 def genre_drama(request, ):
-    drama = Movie.objects.filter(genre=7)
+    drama = Movie.objects.filter(genre=6)
     return render(request, 'drama.html', {'drama': drama})
 
 
@@ -39,7 +39,7 @@ def genre_romance(request):
 
 
 def genre_indian_cinema(request):
-    indian_cinema = Movie.objects.filter(genre=9)
+    indian_cinema = Movie.objects.filter(genre=8)
     return render(request, 'indian_cinema.html', {'cinema': indian_cinema})
 
 
